@@ -36,6 +36,73 @@ public class Main {
       System.out.println("You earned " + minefield[2][0] + " points.");
       System.out.println("You earned " + minefield[1][1] + " points, yay!");
       // Can also store value in a new variable
-      int worstSpot = [0][1];
+      int worstSpot = minefield[0][1];
+
+      // NESTED Loops are necessary to traverse 2D arrays
+      // ENHANCED FOR-EACH LOOP to "visit" all items in order
+      // OUTER loop iterates through each row
+      for (String[] row : seatingChart) {
+         // INNER loop iterates through column values
+         // "for each string item in the row array"
+         for (String col : row) {
+            System.out.print(col + " ");
+         }
+         System.out.println(); // line break between rows
+      }
+         // Cannot use for-each if you want to MODIFY VALUES
+         // or iterate in a different order
+         // STANDARD ("indexed")
+         for (int row = 0; row < minefield.length; row++) {
+            // array[0].length represents NUMBERS OF COLUMNS in a row
+            for (int col = 0; col < minefield[0].length; col++) {
+               // if spot is a "bomb" (negative num), replace it
+               if (minefield[row][col] < 0) {
+                  minefield[row][col] = minefield[row][col] * -1;
+               }
+               System.out.print("[" + minefield[row][col] + "]");
+            }
+            System.out.println();
+         }
+
+
+         /* 
+         String[][] asciiArt =
+        {
+            {" ", " ", "_", "_", "_", " ", " "},
+            {" ", "(", "o", " ", "o", ")", " "},
+            {"(", " ", " ", "V", " ", " ", ")"},
+            {" ", "-", "m", "-", "m", "-", " "},
+        };
+
+        // Part 1: Add 2 assignment statements to change "o" to "@"
+        asciiArt[1][2] = "@";
+        asciiArt[1][4]= "@";
+
+        // print the asciiArt for Part 1
+        System.out.println("ASCII Art:");
+        for (String[] row : asciiArt)
+        {
+            for (String column[][] : row) System.out.print(column);
+            System.out.println();
+        }
+
+        // Part 2: Create your own ASCII art array and print it out!
+        
+        String[][] myArt = 
+        {
+            {" ", " ", " ", " ", "o", " ", "O", " ", "o", " ", " ", " ", " "},
+            {" ", " ", " ", "o", " ", "\", "|", "/", " ", "o", " ", " ", " "},
+            {"o", " ", "o", " ", "\", " ", "|", " ", "/", " ", "o", " ", "o"},
+            {" ", "\", " ", "\", " ", "\", "|", "/", " ", "/", " ", "/", " "},
+            {" ", "(", "+", "+", "+", "\", "@", "/", "+", "+", "+", ")", " "},
+            {" ", "'", "-", "-", "-", "-", "-", "-", "-", "-", "-", "'", " "}
+        };
+        System.out.println("My Art:");
+             for (String[] row : myArt) {
+                 for (String column : row) System.out.println(column);
+                 System.out.println();
+        }
+      }
+        */
    }
 }
