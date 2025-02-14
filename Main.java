@@ -41,6 +41,7 @@ public class Main {
       // NESTED Loops are necessary to traverse 2D arrays
       // ENHANCED FOR-EACH LOOP to "visit" all items in order
       // OUTER loop iterates through each row
+      // IMPORTANT: Data type of a ROW is a 1D Array
       for (String[] row : seatingChart) {
          // INNER loop iterates through column values
          // "for each string item in the row array"
@@ -65,44 +66,50 @@ public class Main {
          }
 
 
-         /* 
-         String[][] asciiArt =
+         
+         char[][] asciiArt =
         {
-            {" ", " ", "_", "_", "_", " ", " "},
-            {" ", "(", "o", " ", "o", ")", " "},
-            {"(", " ", " ", "V", " ", " ", ")"},
-            {" ", "-", "m", "-", "m", "-", " "},
+            {' ', ' ', '_', '_', '_', ' ', ' '},
+            {' ', '(', 'o', ' ', 'o', ')', ' '},
+            {'(', ' ', ' ', 'V', ' ', ' ', ')'},
+            {' ', '-', 'm', '-', 'm', '-', ' '}
         };
 
         // Part 1: Add 2 assignment statements to change "o" to "@"
-        asciiArt[1][2] = "@";
-        asciiArt[1][4]= "@";
+        asciiArt[1][2] = '@';
+        asciiArt[1][4]= '@';
 
         // print the asciiArt for Part 1
         System.out.println("ASCII Art:");
-        for (String[] row : asciiArt)
+        for (char[] row : asciiArt)
         {
-            for (String column[][] : row) System.out.print(column);
+            for (char col : row) {
+               System.out.print(col);
+            }
             System.out.println();
         }
 
         // Part 2: Create your own ASCII art array and print it out!
         
-        String[][] myArt = 
+        
+        char[][] myArt = 
         {
-            {" ", " ", " ", " ", "o", " ", "O", " ", "o", " ", " ", " ", " "},
-            {" ", " ", " ", "o", " ", "\", "|", "/", " ", "o", " ", " ", " "},
-            {"o", " ", "o", " ", "\", " ", "|", " ", "/", " ", "o", " ", "o"},
-            {" ", "\", " ", "\", " ", "\", "|", "/", " ", "/", " ", "/", " "},
-            {" ", "(", "+", "+", "+", "\", "@", "/", "+", "+", "+", ")", " "},
-            {" ", "'", "-", "-", "-", "-", "-", "-", "-", "-", "-", "'", " "}
+            {' ', ' ', ' ', ' ', 'o', ' ', 'O', ' ', 'o', ' ', ' ', ' ', ' '},
+            {' ', ' ', ' ', 'o', ' ', '╲', '|', '/', ' ', 'o', ' ', ' ', ' '},
+            {'o', ' ', 'o', ' ', '╲', ' ', '|', ' ', '/', ' ', 'o', ' ', 'o'},
+            {' ', '╲', ' ', '╲', ' ', '╲', '|', '/', ' ', '/', ' ', '/', ' '},
+            {' ', '(', '+', '+', '+', '╲', '@', '/', '+', '+', '+', ')', ' '},
+            {' ', 'o', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'o', ' '} // \╲
         };
+        System.out.println(" ");
         System.out.println("My Art:");
-             for (String[] row : myArt) {
-                 for (String column : row) System.out.println(column);
+        System.out.println(" ");
+             for (char[] row : myArt) {
+                 for (char col : row) {
+                   System.out.print(col);
+                  }
                  System.out.println();
         }
-      }
-        */
+        
    }
 }
